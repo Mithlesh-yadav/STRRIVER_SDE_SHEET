@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+////////////////////////////////////////////////////////////////////////////////////////using hash table 
+        /*
+        unordered_map<int,int>mp;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            mp[nums[i]]++;
+        }
+        int ans;
+        for(auto it:mp){
+            if(it.second==1)ans=it.first;
+        }
+        return ans;
+*/////////////////////////////////////////////////////////////////////////////////////// more optimized then hash table 
+        int l=0;
+        int r=l+1;
+        if(nums.size()<=1)return nums[l];
+        while(l<r){
+            if(nums[l]==nums[r]){
+                l+=2;
+                r+=2;
+            }
+            else break;
+        }
+        return nums[l];
+    }
+};
