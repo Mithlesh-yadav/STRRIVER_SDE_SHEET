@@ -1,3 +1,5 @@
+ vector<int> topView(Node *root)
+    {
 vector<int>v;
         if(root==NULL) return v;
       
@@ -28,3 +30,4 @@ vector<int>v;
             v.push_back(it.second);
         }
         return v;
+    }
